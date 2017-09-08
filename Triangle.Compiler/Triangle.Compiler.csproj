@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FCB0186D-7507-4096-8496-3C238677E156}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Triangle.Compiler</RootNamespace>
+    <AssemblyName>Triangle.Compiler</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeGenerator\Emitter.cs" />
+    <Compile Include="CodeGenerator\Encoder - Aggregates.cs" />
+    <Compile Include="CodeGenerator\Encoder - Commands.cs" />
+    <Compile Include="CodeGenerator\Encoder - Common.cs" />
+    <Compile Include="CodeGenerator\Encoder - Declarations.cs" />
+    <Compile Include="CodeGenerator\Encoder - Expressions.cs" />
+    <Compile Include="CodeGenerator\Encoder - Parameters.cs" />
+    <Compile Include="CodeGenerator\Encoder - Programs.cs" />
+    <Compile Include="CodeGenerator\Encoder - Terminals.cs" />
+    <Compile Include="CodeGenerator\Encoder - TypeDenoters.cs" />
+    <Compile Include="CodeGenerator\Encoder - Vnames.cs" />
+    <Compile Include="CodeGenerator\Frame.cs" />
+    <Compile Include="CodeGenerator\Entities\AddressableEntity.cs" />
+    <Compile Include="CodeGenerator\Entities\EqualityRoutine.cs" />
+    <Compile Include="CodeGenerator\Entities\Field.cs" />
+    <Compile Include="CodeGenerator\Entities\IFetchableEntity.cs" />
+    <Compile Include="CodeGenerator\Entities\IRoutineEntity.cs" />
+    <Compile Include="CodeGenerator\Entities\KnownAddress.cs" />
+    <Compile Include="CodeGenerator\Entities\KnownRoutine.cs" />
+    <Compile Include="CodeGenerator\Entities\KnownValue.cs" />
+    <Compile Include="CodeGenerator\Entities\ObjectAddress.cs" />
+    <Compile Include="CodeGenerator\Entities\PrimitiveRoutine.cs" />
+    <Compile Include="CodeGenerator\Entities\RuntimeEntity.cs" />
+    <Compile Include="CodeGenerator\Entities\TypeRepresentation.cs" />
+    <Compile Include="CodeGenerator\Entities\UnknownAddress.cs" />
+    <Compile Include="CodeGenerator\Entities\UnknownRoutine.cs" />
+    <Compile Include="CodeGenerator\Entities\UnknownValue.cs" />
+    <Compile Include="ContextualAnalyzer\Checker - Aggregates.cs" />
+    <Compile Include="ContextualAnalyzer\Checker - Commands.cs" />
+    <Compile Include="ContextualAnalyzer\Checker - Common.cs" />
+    <Compile Include="ContextualAnalyzer\Checker - Declarations.cs" />
+    <Compile Include="ContextualAnalyzer\Checker - Expressions.cs" />
+    <Compile Include="ContextualAnalyzer\Checker - Parameters.cs" />
+    <Compile Include="ContextualAnalyzer\Checker - Programs.cs" />
+    <Compile Include="ContextualAnalyzer\Checker - Terminals.cs" />
+    <Compile Include="ContextualAnalyzer\Checker - TypeDenoters.cs" />
+    <Compile Include="ContextualAnalyzer\Checker - Vnames.cs" />
+    <Compile Include="ContextualAnalyzer\IdentificationTable.cs" />
+    <Compile Include="SyntacticAnalyzer\Parser - Commands.cs" />
+    <Compile Include="SyntacticAnalyzer\Parser - Common.cs" />
+    <Compile Include="SyntacticAnalyzer\Parser - Declarations.cs" />
+    <Compile Include="SyntacticAnalyzer\Parser - Expressions.cs" />
+    <Compile Include="SyntacticAnalyzer\Parser - Parameters.cs" />
+    <Compile Include="SyntacticAnalyzer\Parser - Programs.cs" />
+    <Compile Include="SyntacticAnalyzer\Parser - Terminals.cs" />
+    <Compile Include="SyntacticAnalyzer\Parser - TypeDenoters.cs" />
+    <Compile Include="SyntacticAnalyzer\Parser - Vnames.cs" />
+    <Compile Include="SyntacticAnalyzer\Scanner.cs" />
+    <Compile Include="SyntacticAnalyzer\SourceFile.cs" />
+    <Compile Include="SyntacticAnalyzer\SyntaxError.cs" />
+    <Compile Include="SyntacticAnalyzer\Token.cs" />
+    <Compile Include="SyntacticAnalyzer\TokenKind.cs" />
+    <Compile Include="SyntaxTrees\AbstractSyntaxTree.cs" />
+    <Compile Include="SyntaxTrees\Program.cs" />
+    <Compile Include="SyntaxTrees\Actuals\ActualParameter.cs" />
+    <Compile Include="SyntaxTrees\Actuals\ActualParameterSequence.cs" />
+    <Compile Include="SyntaxTrees\Actuals\ConstActualParameter.cs" />
+    <Compile Include="SyntaxTrees\Actuals\EmptyActualParameterSequence.cs" />
+    <Compile Include="SyntaxTrees\Actuals\FuncActualParameter.cs" />
+    <Compile Include="SyntaxTrees\Actuals\MultipleActualParameterSequence.cs" />
+    <Compile Include="SyntaxTrees\Actuals\ProcActualParameter.cs" />
+    <Compile Include="SyntaxTrees\Actuals\SingleActualParameterSequence.cs" />
+    <Compile Include="SyntaxTrees\Actuals\VarActualParameter.cs" />
+    <Compile Include="SyntaxTrees\Aggregates\ArrayAggregate.cs" />
+    <Compile Include="SyntaxTrees\Aggregates\MultipleArrayAggregate.cs" />
+    <Compile Include="SyntaxTrees\Aggregates\MultipleRecordAggregate.cs" />
+    <Compile Include="SyntaxTrees\Aggregates\RecordAggregate.cs" />
+    <Compile Include="SyntaxTrees\Aggregates\SingleArrayAggregate.cs" />
+    <Compile Include="SyntaxTrees\Aggregates\SingleRecordAggregate.cs" />
+    <Compile Include="SyntaxTrees\Commands\AssignCommand.cs" />
+    <Compile Include="SyntaxTrees\Commands\CallCommand.cs" />
+    <Compile Include="SyntaxTrees\Commands\Command.cs" />
+    <Compile Include="SyntaxTrees\Commands\EmptyCommand.cs" />
+    <Compile Include="SyntaxTrees\Commands\IfCommand.cs" />
+    <Compile Include="SyntaxTrees\Commands\LetCommand.cs" />
+    <Compile Include="SyntaxTrees\Commands\SequentialCommand.cs" />
+    <Compile Include="SyntaxTrees\Commands\WhileCommand.cs" />
+    <Compile Include="SyntaxTrees\Declarations\BinaryOperatorDeclaration.cs" />
+    <Compile Include="SyntaxTrees\Declarations\ConstDeclaration.cs" />
+    <Compile Include="SyntaxTrees\Declarations\Declaration.cs" />
+    <Compile Include="SyntaxTrees\Declarations\FuncDeclaration.cs" />
+    <Compile Include="SyntaxTrees\Declarations\IConstantDeclaration.cs" />
+    <Compile Include="SyntaxTrees\Declarations\IDeclaration.cs" />
+    <Compile Include="SyntaxTrees\Declarations\IFunctionDeclaration.cs" />
+    <Compile Include="SyntaxTrees\Declarations\IProcedureDeclaration.cs" />
+    <Compile Include="SyntaxTrees\Declarations\IVariableDeclaration.cs" />
+    <Compile Include="SyntaxTrees\Declarations\ProcDeclaration.cs" />
+    <Compile Include="SyntaxTrees\Declarations\SequentialDeclaration.cs" />
+    <Compile Include="SyntaxTrees\Declarations\TypeDeclaration.cs" />
+    <Compile Include="SyntaxTrees\Declarations\UnaryOperatorDeclaration.cs" />
+    <Compile Include="SyntaxTrees\Declarations\VarDeclaration.cs" />
+    <Compile Include="SyntaxTrees\Expressions\ArrayExpression.cs" />
+    <Compile Include="SyntaxTrees\Expressions\BinaryExpression.cs" />
+    <Compile Include="SyntaxTrees\Expressions\CallExpression.cs" />
+    <Compile Include="SyntaxTrees\Expressions\CharacterExpression.cs" />
+    <Compile Include="SyntaxTrees\Expressions\EmptyExpression.cs" />
+    <Compile Include="SyntaxTrees\Expressions\Expression.cs" />
+    <Compile Include="SyntaxTrees\Expressions\IfExpression.cs" />
+    <Compile Include="SyntaxTrees\Expressions\IntegerExpression.cs" />
+    <Compile Include="SyntaxTrees\Expressions\LetExpression.cs" />
+    <Compile Include="SyntaxTrees\Expressions\RecordExpression.cs" />
+    <Compile Include="SyntaxTrees\Expressions\UnaryExpression.cs" />
+    <Compile Include="SyntaxTrees\Expressions\VnameExpression.cs" />
+    <Compile Include="SyntaxTrees\Formals\ConstFormalParameter.cs" />
+    <Compile Include="SyntaxTrees\Formals\EmptyFormalParameterSequence.cs" />
+    <Compile Include="SyntaxTrees\Formals\FormalParameter.cs" />
+    <Compile Include="SyntaxTrees\Formals\FormalParameterSequence.cs" />
+    <Compile Include="SyntaxTrees\Formals\FuncFormalParameter.cs" />
+    <Compile Include="SyntaxTrees\Formals\MultipleFormalParameterSequence.cs" />
+    <Compile Include="SyntaxTrees\Formals\ProcFormalParameter.cs" />
+    <Compile Include="SyntaxTrees\Formals\SingleFormalParameterSequence.cs" />
+    <Compile Include="SyntaxTrees\Formals\VarFormalParameter.cs" />
+    <Compile Include="SyntaxTrees\Terminals\CharacterLiteral.cs" />
+    <Compile Include="SyntaxTrees\Terminals\Identifier.cs" />
+    <Compile Include="SyntaxTrees\Terminals\IntegerLiteral.cs" />
+    <Compile Include="SyntaxTrees\Terminals\Operator.cs" />
+    <Compile Include="SyntaxTrees\Terminals\Terminal.cs" />
+    <Compile Include="SyntaxTrees\Types\AnyTypeDenoter.cs" />
+    <Compile Include="SyntaxTrees\Types\ArrayTypeDenoter.cs" />
+    <Compile Include="SyntaxTrees\Types\BoolTypeDenoter.cs" />
+    <Compile Include="SyntaxTrees\Types\CharTypeDenoter.cs" />
+    <Compile Include="SyntaxTrees\Types\ErrorTypeDenoter.cs" />
+    <Compile Include="SyntaxTrees\Types\FieldTypeDenoter.cs" />
+    <Compile Include="SyntaxTrees\Types\IntTypeDenoter.cs" />
+    <Compile Include="SyntaxTrees\Types\MultipleFieldTypeDenoter.cs" />
+    <Compile Include="SyntaxTrees\Types\RecordTypeDenoter.cs" />
+    <Compile Include="SyntaxTrees\Types\SimpleTypeDenoter.cs" />
+    <Compile Include="SyntaxTrees\Types\SingleFieldTypeDenoter.cs" />
+    <Compile Include="SyntaxTrees\Types\TypeDenoter.cs" />
+    <Compile Include="SyntaxTrees\Visitors\IActualParameterSequenceVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\IActualParameterVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\IArrayAggregateVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\ICommandVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\IDeclarationVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\IExpressionVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\IFieldTypeDenoterVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\IFormalParameterSequenceVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\IFormalParameterVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\IIdentifierVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\ILiteralVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\IOperatorVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\IProgramVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\IRecordAggregateVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\ITypeDenoterVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\IVnameVisitor.cs" />
+    <Compile Include="SyntaxTrees\Visitors\Void.cs" />
+    <Compile Include="SyntaxTrees\Vnames\DotVname.cs" />
+    <Compile Include="SyntaxTrees\Vnames\SimpleVname.cs" />
+    <Compile Include="SyntaxTrees\Vnames\SubscriptVname.cs" />
+    <Compile Include="SyntaxTrees\Vnames\Vname.cs" />
+    <Compile Include="Compiler.cs" />
+    <Compile Include="ErrorReporter.cs" />
+    <Compile Include="StandardEnvironment.cs" />
+    <Compile Include="StreamErrorReporter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Triangle.AbstractMachine\Triangle.AbstractMachine.csproj">
+      <Project>{A83E38A4-6F39-41B0-AAD2-8509754589E0}</Project>
+      <Name>Triangle.AbstractMachine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
